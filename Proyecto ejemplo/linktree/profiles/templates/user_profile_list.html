@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Profile List - Tesape'a Django</title>
+    </head>
+    <h1>List of users in Tesape'a LinkTree 🌳🟡</h1>
+    <div>
+        {% for profile in profiles %}
+        <div class="profile-container">
+            {% for profile in profiles %}
+            <div class="card">
+                <img
+                    src="{{ profile.profile_picture }}"
+                    class="card-img-top"
+                    alt="{{ profile.name }} {{ profile.lastname }}"
+                />
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{ profile.name }} {{ profile.lastname }}
+                    </h5>
+                    <a href="{% url 'user_profile_detail' profile.id %}">
+                        Go to page</a
+                    >
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</html>

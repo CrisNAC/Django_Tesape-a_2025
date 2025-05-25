@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>
+            {{ profile.name }} {{ profile.lastname }} - Tesape'a Django
+        </title>
+    </head>
+    <body>
+            <img
+                src="{{ profile.profile_picture }}"
+                alt="{{ profile.name }} {{ profile.lastname }}"
+            />
+
+            <h1>{{ profile.name }} {{ profile.lastname }}</h1>
+            <p>{{ profile.short_description }}</p>
+
+            <div>
+                <ul>
+                    <li>
+                        Birthday: {{ profile.birthday }}
+                    </li>
+                    <li>
+                        Contact Number:
+                        <a href="tel:{{ profile.phone_number }}"
+                            >{{ profile.phone_number }}</a
+                        >
+                    </li>
+                    <li>
+                        Email:
+                        <a href="mailto:{{ profile.email }}"
+                            >{{ profile.email }}</a
+                        >
+                    </li>
+                </ul>
+            </div>
+    </body>
+</html>
